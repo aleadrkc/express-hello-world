@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(cors());
+app.get("/cikarang", (req, res) => { res.json({"lokasi": "cikarang"})});
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
